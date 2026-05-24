@@ -10,6 +10,7 @@ namespace XYZRoguelike
 	public:
 		Platform(const sf::Vector2f& position);
 		void Update(float timeDelta) override;
+		void restart() override;
 		
 		bool GetCollision(std::shared_ptr<Colladiable> collidable) const override;
 		void OnHit() override {}

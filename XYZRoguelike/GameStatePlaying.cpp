@@ -7,15 +7,17 @@
 #include "randomizer.h"
 
 #include <assert.h>
+#include <iostream>
 #include <sstream>
 
 namespace XYZRoguelike
 {
 	void GameStatePlayingData::Init()
-	{	
+	{
 		// Init game resources (terminate if error)
 		assert(font.loadFromFile(SETTINGS.FONTS_PATH + "Roboto-Regular.ttf"));
 		assert(gameOverSoundBuffer.loadFromFile(SETTINGS.SOUNDS_PATH + "Death.wav"));
+		assert(bonusSoundBuffer.loadFromFile(SETTINGS.SOUNDS_PATH + "AppleEat.wav"));
 
 		//factoriesInit
 		factories.emplace(BlockType::Simple, std::make_unique<SimpleBlockFactory>());
@@ -34,53 +36,60 @@ namespace XYZRoguelike
 		inputHintText.setFont(font);
 		inputHintText.setCharacterSize(24);
 		inputHintText.setFillColor(sf::Color::White);
-		inputHintText.setString("Use arrow keys to move, ESC to pause");
 		inputHintText.setOrigin(GetTextOrigin(inputHintText, { 1.f, 0.f }));
 
+		inventory.AddItem(InventoryItemType::HealthPotion, 1);
+		inventory.AddItem(InventoryItemType::BallBoost, 1);
+		playerHealth = maxPlayerHealth;
+		bossBlock = nullptr;
+
 		auto platform = std::make_shared<Platform>(sf::Vector2f({ SETTINGS.SCREEN_WIDTH / 2.f, SETTINGS.SCREEN_HEIGHT - SETTINGS.PLATFORM_HEIGHT / 2.f }));
-		gameObjects.emplace_back(platform);		auto ball = std::make_shared<Ball>(sf::Vector2f({ SETTINGS.SCREEN_WIDTH / 2.f, SETTINGS.SCREEN_HEIGHT - SETTINGS.PLATFORM_HEIGHT - SETTINGS.BALL_SIZE / 2.f }));
+		gameObjects.emplace_back(platform);
+		auto ball = std::make_shared<Ball>(sf::Vector2f({ SETTINGS.SCREEN_WIDTH / 2.f, SETTINGS.SCREEN_HEIGHT - SETTINGS.PLATFORM_HEIGHT - SETTINGS.BALL_SIZE / 2.f }));
 		ball->AddObserver(weak_from_this());
 		gameObjects.emplace_back(ball);
 
 		createBlocks();
+		ResetRound();
 
 		// Init sounds
 		gameOverSound.setBuffer(gameOverSoundBuffer);
 		bonusSound.setBuffer(bonusSoundBuffer);
 		bonuses.emplace(BonusType::BiggerPlatform, Bonus(
 			[wplatform = std::weak_ptr<Platform>(platform), &sound = bonusSound]() {
-			auto platform = wplatform.lock();
-			if (platform) {
-				sound.play();
-				platform->ChangeWidth(2);
-			}
-		},
+				auto platform = wplatform.lock();
+				if (platform) {
+					sound.play();
+					platform->ChangeWidth(2);
+				}
+			},
 			[wplatform = std::weak_ptr<Platform>(platform)]() {
-			auto platform = wplatform.lock();
-			if (platform) {
-
-				platform->ChangeWidth(0.5);
-			}
-		},
+				auto platform = wplatform.lock();
+				if (platform) {
+					platform->ChangeWidth(0.5);
+				}
+			},
 			SETTINGS.BONUS_DURATION
 			));
 
 		bonuses.emplace(BonusType::SlowBall, Bonus(
 			[wball = std::weak_ptr<Ball>(ball), &sound = bonusSound]() {
-			auto ball = wball.lock();
-			if (ball) {
-				sound.play();
-				ball->ChangeSpeed(0.5);
-			}
-		},
+				auto ball = wball.lock();
+				if (ball) {
+					sound.play();
+					ball->ChangeSpeed(0.5f);
+				}
+			},
 			[wball = std::weak_ptr<Ball>(ball)]() {
-			auto ball = wball.lock();
-			if (ball) {
-				ball->ChangeSpeed(1);
-			}
-		},
+				auto ball = wball.lock();
+				if (ball) {
+					ball->ChangeSpeed(1.f);
+				}
+			},
 			SETTINGS.BONUS_DURATION
 			));
+
+		UpdateStatusText();
 	}
 
 	void GameStatePlayingData::HandleWindowEvent(const sf::Event& event)
@@ -90,6 +99,14 @@ namespace XYZRoguelike
 			if (event.key.code == sf::Keyboard::Escape)
 			{
 				Application::Instance().GetGame().PauseGame();
+			}
+			else if (event.key.code == sf::Keyboard::H)
+			{
+				UseItem(InventoryItemType::HealthPotion);
+			}
+			else if (event.key.code == sf::Keyboard::B)
+			{
+				UseItem(InventoryItemType::BallBoost);
 			}
 		}
 	}
@@ -104,20 +121,18 @@ namespace XYZRoguelike
 			bonusPair.second.Update(timeDelta);
 			});
 
-		std::shared_ptr <Platform> platform = std::dynamic_pointer_cast<Platform>(gameObjects[0]);
-		std::shared_ptr<Ball> ball = std::dynamic_pointer_cast<Ball>(gameObjects[1]);
+		auto platform = std::dynamic_pointer_cast<Platform>(gameObjects[0]);
+		auto ball = std::dynamic_pointer_cast<Ball>(gameObjects[1]);
 
 		auto isCollision = platform->CheckCollision(ball);
 
 		bool needInverseDirX = false;
 		bool needInverseDirY = false;
 
-
 		bool hasBrokeOneBlock = false;
-		//remove-erase idiom
 		blocks.erase(
 			std::remove_if(blocks.begin(), blocks.end(),
-				[ball, &hasBrokeOneBlock, &needInverseDirX, &needInverseDirY, this](auto block) {
+				[ball, &hasBrokeOneBlock, &needInverseDirX, &needInverseDirY](auto block) {
 					if ((!hasBrokeOneBlock) && block->CheckCollision(ball)) {
 						hasBrokeOneBlock = true;
 						const auto ballPos = ball->GetPosition();
@@ -128,7 +143,8 @@ namespace XYZRoguelike
 					return block->IsBroken();
 				}),
 			blocks.end()
-					);
+				);
+
 		if (needInverseDirX) {
 			ball->InvertDirectionX();
 		}
@@ -139,11 +155,9 @@ namespace XYZRoguelike
 
 	void GameStatePlayingData::Draw(sf::RenderWindow& window)
 	{
-		// Draw background
 		window.draw(background);
 
 		static auto drawFunc = [&window](auto block) { block->Draw(window); };
-		// Draw game objects
 		std::for_each(gameObjects.begin(), gameObjects.end(), drawFunc);
 		std::for_each(blocks.begin(), blocks.end(), drawFunc);
 
@@ -159,25 +173,90 @@ namespace XYZRoguelike
 	void GameStatePlayingData::LoadNextLevel()
 	{
 		if (currentLevel >= levelLoder.GetLevelCount() - 1) {
-			Game& game = Application::Instance().GetGame();
-
-			game.WinGame();
+			Application::Instance().GetGame().WinGame();
+			return;
 		}
-		else
-		{
-			std::shared_ptr <Platform> platform = std::dynamic_pointer_cast<Platform>(gameObjects[0]);
-			std::shared_ptr<Ball> ball = std::dynamic_pointer_cast<Ball>(gameObjects[1]);
-			platform->restart();
-			ball->restart();
 
-			blocks.clear();
-			++currentLevel;
-			createBlocks();
+		ResetRound();
+		blocks.clear();
+		++currentLevel;
+		createBlocks();
+		UpdateStatusText();
+		std::cout << "[Level] Loaded level " << currentLevel + 1 << " / " << levelLoder.GetLevelCount() << std::endl;
+	}
+
+	void GameStatePlayingData::ResetRound()
+	{
+		auto platform = std::dynamic_pointer_cast<Platform>(gameObjects[0]);
+		auto ball = std::dynamic_pointer_cast<Ball>(gameObjects[1]);
+
+		if (platform) {
+			platform->restart();
+		}
+		if (ball) {
+			ball->restart();
 		}
 	}
 
-	void GameStatePlayingData::createBlocks() 
+	void GameStatePlayingData::UpdateStatusText()
 	{
+		std::ostringstream status;
+		status << "Level " << currentLevel + 1 << " / " << levelLoder.GetLevelCount()
+			<< " | Health " << playerHealth << " / " << maxPlayerHealth
+			<< " | " << inventory.GetSummary();
+		scoreText.setString(status.str());
+		inputHintText.setString("Use arrows, H=heal, B=boost, ESC=pause");
+	}
+
+	void GameStatePlayingData::UseItem(InventoryItemType item)
+	{
+		if (!inventory.ConsumeItem(item))
+		{
+			std::cout << "[Inventory] No " << inventory.GetItemName(item) << " available." << std::endl;
+			UpdateStatusText();
+			return;
+		}
+
+		switch (item)
+		{
+		case InventoryItemType::HealthPotion:
+			playerHealth = std::min(maxPlayerHealth, playerHealth + 1);
+			std::cout << "[Inventory] Used Health Potion, health restored to " << playerHealth << "." << std::endl;
+			break;
+		case InventoryItemType::BallBoost:
+			if (auto ball = std::dynamic_pointer_cast<Ball>(gameObjects[1]))
+			{
+				ball->ChangeSpeed(1.2f);
+			}
+			std::cout << "[Inventory] Used Ball Boost." << std::endl;
+			break;
+		default:
+			break;
+		}
+
+		UpdateStatusText();
+	}
+
+	void GameStatePlayingData::AwardLoot()
+	{
+		auto percent = random<int>(0, 100);
+		if (percent < 25)
+		{
+			inventory.AddItem(InventoryItemType::HealthPotion, 1);
+			std::cout << "[Loot] Health Potion added to inventory." << std::endl;
+		}
+		else if (percent < 45)
+		{
+			inventory.AddItem(InventoryItemType::BallBoost, 1);
+			std::cout << "[Loot] Ball Boost added to inventory." << std::endl;
+		}
+
+		UpdateStatusText();
+	}
+
+	void GameStatePlayingData::createBlocks()
+	{
+		breackableBlocksCount = 0;
 		for (const auto& pair : factories)
 		{
 			pair.second->ClearCounter();
@@ -196,20 +275,23 @@ namespace XYZRoguelike
 				, (float)pos.y * SETTINGS.BLOCK_HEIGHT
 			};
 
-
 			blocks.emplace_back(factories.at(blockType)->CreateBlock(position));
 			blocks.back()->AddObserver(self);
 		}
 
+		bossBlock = std::make_shared<BossBlock>(sf::Vector2f{ SETTINGS.SCREEN_WIDTH / 2.f, 80.f });
+		bossBlock->AddObserver(self);
+		blocks.emplace_back(bossBlock);
 
 		for (const auto& pair : factories)
 		{
 			breackableBlocksCount += pair.second->GetcreatedBreackableBlocksCount();
 		}
+		++breackableBlocksCount;
 	}
 
-	void GameStatePlayingData::GetBallInverse(const sf::Vector2f& ballPos, const sf::FloatRect& blockRect, bool& needInverseDirX, bool& needInverseDirY) {
-
+	void GameStatePlayingData::GetBallInverse(const sf::Vector2f& ballPos, const sf::FloatRect& blockRect, bool& needInverseDirX, bool& needInverseDirY)
+	{
 		if (ballPos.y > blockRect.top + blockRect.height)
 		{
 			needInverseDirY = true;
@@ -226,27 +308,38 @@ namespace XYZRoguelike
 
 	void GameStatePlayingData::Notify(std::shared_ptr<IObservable> observable)
 	{
-		if (auto block = std::dynamic_pointer_cast<Block>(observable); block) {
+		if (auto block = std::dynamic_pointer_cast<Block>(observable); block)
+		{
 			--breackableBlocksCount;
+			if (std::dynamic_pointer_cast<BossBlock>(block))
+			{
+				bonusSound.play();
+				std::cout << "[Boss] Boss defeated. Next location unlocked." << std::endl;
+				AwardLoot();
+				Application::Instance().GetGame().LoadNextLevel();
+				return;
+			}
+
 			Game& game = Application::Instance().GetGame();
-			if (breackableBlocksCount == 0) {
+			if (breackableBlocksCount == 0)
+			{
 				game.LoadNextLevel();
 			}
 			else
 			{
-				auto percent = random<int>(0, 100);
-				if (SETTINGS.BONUS_PROPABILITY_PERCENT >= percent) {
-					BonusType bonusType = (BonusType)(random<int>(0, (int)BonusType::Count - 1));
-					bonuses.at(bonusType).Activate();
-				}
+				AwardLoot();
 			}
 		}
 		else if (auto ball = std::dynamic_pointer_cast<Ball>(observable); ball)
 		{
-			if (ball->GetPosition().y > gameObjects.front()->GetRect().top) {
-				gameOverSound.play();
-				Application::Instance().GetGame().LooseGame();
-			}
-		}
-	}
-}
+			if (ball->GetPosition().y > gameObjects.front()->GetRect().top)
+			{
+				if (playerHealth > 1)
+				{
+					--playerHealth;
+					ResetRound();
+					std::cout << "[Health] Ball missed! Health left: " << playerHealth << std::endl;
+					UpdateStatusText();
+					return;
+				}
+

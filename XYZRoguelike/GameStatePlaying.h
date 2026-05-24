@@ -8,6 +8,8 @@
 #include "BlockFactory.h"
 #include "IObserver.h"
 #include "Bonus.h"
+#include "BossBlock.h"
+#include "Inventory.h"
 
 #include <unordered_map>
 
@@ -39,6 +41,10 @@ namespace XYZRoguelike
 		void createBlocks();
 		void GetBallInverse(const sf::Vector2f& ballPos, const sf::FloatRect& blockRect, bool& needInverseDirX,
 			bool& needInverseDirY);
+		void ResetRound();
+		void UpdateStatusText();
+		void UseItem(InventoryItemType item);
+		void AwardLoot();
 
 		// Resources
 		sf::Texture appleTexture;
@@ -51,6 +57,10 @@ namespace XYZRoguelike
 		// Game data
 		std::vector<std::shared_ptr<GameObject>> gameObjects;
 		std::vector<std::shared_ptr<Block>> blocks;
+		std::shared_ptr<BossBlock> bossBlock;
+		Inventory inventory;
+		int playerHealth = 3;
+		const int maxPlayerHealth = 3;
 
 		// UI data
 		sf::Text scoreText;
@@ -68,7 +78,6 @@ namespace XYZRoguelike
 		//Levels
 		LevelLoader levelLoder;
 		int currentLevel = 0;
-
 
 		//Bonus
 		std::map<BonusType, Bonus> bonuses;
