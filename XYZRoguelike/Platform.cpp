@@ -69,6 +69,12 @@ namespace XYZRoguelike
 		return false;
 	}
 
+	void Platform::restart()
+	{
+		GameObject::restart();
+		sprite.setScale(1.f, 1.f);
+	}
+
 	void Platform::ChangeWidth(float multiplyWidth)
 	{
 		sprite.scale(sf::Vector2f(multiplyWidth, 1));

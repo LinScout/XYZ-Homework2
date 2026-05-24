@@ -164,6 +164,7 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockFactory.cpp" />
     <ClCompile Include="Bonus.cpp" />
+    <ClCompile Include="BossBlock.cpp" />
     <ClCompile Include="CombatHud.cpp" />
     <ClCompile Include="GameLog.cpp" />
     <ClCompile Include="DeveloperLevel.cpp" />
@@ -185,6 +186,7 @@
     <ClCompile Include="GameStateMainMenu.cpp" />
     <ClCompile Include="GameStatePlaying.cpp" />
     <ClCompile Include="GameStateRecords.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="ThreeHitBlock.cpp" />
@@ -196,6 +198,7 @@
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockFactory.h" />
     <ClInclude Include="Bonus.h" />
+    <ClInclude Include="BossBlock.h" />
     <ClInclude Include="CombatHud.h" />
     <ClInclude Include="GameLog.h" />
     <ClInclude Include="DeveloperLevel.h" />
@@ -221,6 +224,7 @@
     <ClInclude Include="GameStateMainMenu.h" />
     <ClInclude Include="GameStatePlaying.h" />
     <ClInclude Include="GameStateRecords.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="ThreeHitBlock.h" />
