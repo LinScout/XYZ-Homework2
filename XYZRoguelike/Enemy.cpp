@@ -5,11 +5,11 @@
 
 namespace XYZRoguelike
 {
-	Enemy::Enemy(const XYZEngine::Vector2Df& position)
+	Enemy::Enemy(const XYZEngine::Vector2Df& position, const std::string& name)
 	{
 		GAME_LOG_INFO("Creating enemy entity");
 
-		gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Enemy");
+		gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject(name);
 		auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
 		transform->SetWorldPosition(position);
 

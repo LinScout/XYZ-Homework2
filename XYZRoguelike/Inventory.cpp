@@ -53,7 +53,7 @@ namespace XYZRoguelike
 		case InventoryItemType::HealthPotion:
 			return "Health Potion";
 		case InventoryItemType::BallBoost:
-			return "Ball Boost";
+			return "Speed Potion";
 		default:
 			return "Unknown Item";
 		}

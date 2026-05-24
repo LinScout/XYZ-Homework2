@@ -17,7 +17,7 @@ namespace XYZRoguelike
 		titleText.setFont(font);
 		titleText.setCharacterSize(22);
 		titleText.setFillColor(sf::Color::Yellow);
-		titleText.setString("Combat stats");
+		titleText.setString("Roguelike combat HUD");
 		titleText.setPosition(10.f, 10.f);
 
 		playerStatsText.setFont(font);
@@ -30,11 +30,26 @@ namespace XYZRoguelike
 		enemyStatsText.setFillColor(sf::Color::Red);
 		enemyStatsText.setPosition(10.f, 65.f);
 
+		levelText.setFont(font);
+		levelText.setCharacterSize(17);
+		levelText.setFillColor(sf::Color::Cyan);
+		levelText.setPosition(10.f, 95.f);
+
+		inventoryText.setFont(font);
+		inventoryText.setCharacterSize(17);
+		inventoryText.setFillColor(sf::Color::Magenta);
+		inventoryText.setPosition(10.f, 120.f);
+
+		missionText.setFont(font);
+		missionText.setCharacterSize(17);
+		missionText.setFillColor(sf::Color::White);
+		missionText.setPosition(10.f, 145.f);
+
 		controlsText.setFont(font);
 		controlsText.setCharacterSize(16);
 		controlsText.setFillColor(sf::Color::White);
-		controlsText.setString("Move: WASD | Attack: Space");
-		controlsText.setPosition(10.f, 95.f);
+		controlsText.setString("Move: WASD | Space: attack | H: heal | B: speed boost | N: next level | R: restart");
+		controlsText.setPosition(10.f, 175.f);
 
 		GAME_LOG_INFO("CombatHud initialized");
 	}
@@ -44,7 +59,7 @@ namespace XYZRoguelike
 		return ready;
 	}
 
-	void CombatHud::Draw(sf::RenderWindow& window, const Player* player, const Enemy* enemy)
+	void CombatHud::Draw(sf::RenderWindow& window, const Player* player, const Enemy* enemy, const std::string& levelInfo, const std::string& inventoryInfo, const std::string& missionInfo)
 	{
 		if (!ready)
 		{
@@ -70,14 +85,18 @@ namespace XYZRoguelike
 		{
 			auto* stats = enemy->GetCombatStats();
 			std::ostringstream oss;
-			oss << "Enemy   HP: " << stats->GetHealthPoints() << "/" << stats->GetMaxHealthPoints()
+			oss << "Boss    HP: " << stats->GetHealthPoints() << "/" << stats->GetMaxHealthPoints()
 				<< "  Armor: " << stats->GetArmorPoints();
 			enemyStatsText.setString(oss.str());
 		}
 		else
 		{
-			enemyStatsText.setString("Enemy: defeated or unavailable");
+			enemyStatsText.setString("Boss    : defeated");
 		}
+
+		levelText.setString(levelInfo);
+		inventoryText.setString(inventoryInfo);
+		missionText.setString(missionInfo);
 
 		const sf::View previousView = window.getView();
 		window.setView(window.getDefaultView());
@@ -85,6 +104,9 @@ namespace XYZRoguelike
 		window.draw(titleText);
 		window.draw(playerStatsText);
 		window.draw(enemyStatsText);
+		window.draw(levelText);
+		window.draw(inventoryText);
+		window.draw(missionText);
 		window.draw(controlsText);
 
 		window.setView(previousView);

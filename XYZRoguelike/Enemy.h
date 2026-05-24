@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include "GameWorld.h"
 #include "SpriteRendererComponent.h"
 #include "TargetComponent.h"
@@ -15,7 +16,7 @@ namespace XYZRoguelike
 	class Enemy
 	{
 	public:
-		Enemy(const XYZEngine::Vector2Df& position);
+		Enemy(const XYZEngine::Vector2Df& position, const std::string& name = "Enemy");
 
 		XYZEngine::GameObject* GetGameObject() const;
 		XYZEngine::CombatStatsComponent* GetCombatStats() const;
