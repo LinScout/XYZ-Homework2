@@ -51,6 +51,12 @@ namespace XYZEngine
 			GameWorld::Instance()->Update(deltaTime);
 			GameWorld::Instance()->FixedUpdate(deltaTime);
 			GameWorld::Instance()->Render();
+
+			if (overlayDraw)
+			{
+				overlayDraw(RenderSystem::Instance()->GetMainWindow());
+			}
+
 			GameWorld::Instance()->LateUpdate();
 
 			RenderSystem::Instance()->GetMainWindow().display();
@@ -67,5 +73,10 @@ namespace XYZEngine
 		LoggerRegistry::getInstance().setDefaultLogger(logger);
 
 		LOG_INFO("Logger initialized (console and log.txt)");
+	}
+
+	void Engine::SetOverlayDraw(OverlayDrawCallback callback)
+	{
+		overlayDraw = std::move(callback);
 	}
 }

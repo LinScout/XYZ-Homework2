@@ -4,15 +4,15 @@
 #include <MovementComponent.h>
 #include <SpriteDirectionComponent.h>
 #include <SpriteMovementAnimationComponent.h>
-#include <HealthComponent.h>
-#include <AttackComponent.h>
-#include <Logger.h>
+#include <CombatStatsDisplayComponent.h>
+#include "GameLog.h"
 
 namespace XYZRoguelike
 {
 	Player::Player(const XYZEngine::Vector2Df& position)
 	{
-		LOG_INFO("Creating player");
+		GAME_LOG_INFO("Creating player entity");
+
 		gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Player");
 		auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
 		transform->SetWorldPosition(position);
@@ -25,38 +25,49 @@ namespace XYZRoguelike
 		camera->SetWindow(&XYZEngine::RenderSystem::Instance()->GetMainWindow());
 		camera->SetBaseResolution(1280, 720);
 
-		auto input = gameObject->AddComponent<XYZEngine::InputComponent>();
+		gameObject->AddComponent<XYZEngine::InputComponent>();
 
 		auto movement = gameObject->AddComponent<XYZEngine::MovementComponent>();
 		movement->SetSpeed(400.f);
 
-		auto spriteDirection = gameObject->AddComponent<XYZEngine::SpriteDirectionComponent>();
+		gameObject->AddComponent<XYZEngine::SpriteDirectionComponent>();
 
 		auto rigidbody = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
 		rigidbody->SetKinematic(false);
 
-		auto collider = gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
+		gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
 
 		auto animator = gameObject->AddComponent<XYZEngine::SpriteMovementAnimationComponent>();
 		animator->Initialize("player", 6.f);
 
-		auto health = gameObject->AddComponent<XYZEngine::HealthComponent>();
-		health->SetMaxHealth(100);
-		health->SetHealth(100);
-		health->SetArmor(10);
+		combatStats = gameObject->AddComponent<XYZEngine::CombatStatsComponent>();
+		combatStats->SetMaxHealthPoints(100);
+		combatStats->SetHealthPoints(100);
+		combatStats->SetArmorPoints(10);
+		gameObject->AddComponent<XYZEngine::CombatStatsDisplayComponent>();
 
-		auto attack = gameObject->AddComponent<XYZEngine::AttackComponent>();
-		attack->SetDamage(20);
-		attack->SetAttackRange(130.f);
-		attack->SetCooldown(0.4f);
-		attack->SetAutoAttack(false);
-		attack->SetTargetByName("Enemy");
+		attackComponent = gameObject->AddComponent<XYZEngine::AttackComponent>();
+		attackComponent->SetDamage(20);
+		attackComponent->SetAttackRange(130.f);
+		attackComponent->SetCooldown(0.4f);
+		attackComponent->SetAutoAttack(false);
+		attackComponent->SetTargetByName("Enemy");
 
-		LOG_INFO("Player created (HP: 100, armor: 10). Attack: Space");
+		GAME_LOG_INFO("Player ready: HP 100/100, armor 10, attack on Space");
 	}
 
-	XYZEngine::GameObject* Player::GetGameObject()
+	XYZEngine::GameObject* Player::GetGameObject() const
 	{
 		return gameObject;
+	}
+
+	XYZEngine::CombatStatsComponent* Player::GetCombatStats() const
+	{
+		return combatStats;
+	}
+
+	XYZEngine::AttackComponent* Player::GetAttackComponent() const
+	{
+		return attackComponent;
 	}
 }

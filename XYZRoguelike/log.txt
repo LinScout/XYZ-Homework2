@@ -24547,3 +24547,653 @@
 [INFO] Player defeated Enemy
 [INFO] Main window closed
 [INFO] XYZRoguelike finished
+[INFO] Logger initialized (console and log.txt)
+[INFO] Engine and game loggers are active
+[INFO] Loading texture map: player from Resources/TextureMaps/Player.png
+[INFO] Texture map loaded: player
+[INFO] Loading texture map: level_floors from Resources/TextureMaps/Floor.png
+[INFO] Texture map loaded: level_floors
+[INFO] Loading texture map: level_walls from Resources/TextureMaps/Wall.png
+[INFO] Texture map loaded: level_walls
+[INFO] Loading sound: music from Resources/Sounds/OST.wav
+[INFO] Sound loaded: music
+[INFO] Target assigned: Player
+[ERROR] Sound not found: missing_sound_for_test
+[WARNING] Handled missing sound test without crashing
+[INFO] Program was started!
+[INFO] Combat stats font loaded: Resources/Fonts/Roboto-Regular.ttf
+[INFO] Enemy detected player and started chasing
+[INFO] Enemy lost player and stopped
+[INFO] Enemy detected player and started chasing
+[INFO] Player attacks Enemy for 20 damage
+[INFO] Enemy armor absorbed 5 (armor: 0)
+[INFO] Enemy took 15 HP damage (35/50)
+[INFO] Enemy attacks Player for 12 damage
+[INFO] Player armor absorbed 10 (armor: 0)
+[INFO] Player took 2 HP damage (98/100)
+[INFO] Player attacks Enemy for 20 damage
+[INFO] Enemy took 20 HP damage (15/50)
+[INFO] Enemy attacks Player for 12 damage
+[INFO] Player took 12 HP damage (86/100)
+[INFO] Enemy attacks Player for 12 damage
+[INFO] Player took 12 HP damage (74/100)
+[INFO] Player attacks Enemy for 20 damage
+[INFO] Enemy took 20 HP damage (0/50)
+[WARNING] Enemy has been defeated
+[INFO] Player defeated Enemy
+[INFO] Main window closed
+[INFO] Engine shutdown
+[INFO] Logger initialized (console and log.txt)
+[INFO] Engine and game loggers are active
+[INFO] Loading texture map: player from Resources/TextureMaps/Player.png
+[INFO] Texture map loaded: player
+[INFO] Loading texture map: level_floors from Resources/TextureMaps/Floor.png
+[INFO] Texture map loaded: level_floors
+[INFO] Loading texture map: level_walls from Resources/TextureMaps/Wall.png
+[INFO] Texture map loaded: level_walls
+[INFO] Loading sound: music from Resources/Sounds/OST.wav
+[INFO] Sound loaded: music
+[INFO] Target assigned: Player
+[ERROR] Sound not found: missing_sound_for_test
+[WARNING] Handled missing sound test without crashing
+[INFO] Program was started!
+[INFO] Combat stats font loaded: Resources/Fonts/Roboto-Regular.ttf
+[INFO] Enemy detected player and started chasing
+[INFO] Player attacks Enemy for 20 damage
+[INFO] Enemy armor absorbed 5 (armor: 0)
+[INFO] Enemy took 15 HP damage (35/50)
+[INFO] Enemy attacks Player for 12 damage
+[INFO] Player armor absorbed 10 (armor: 0)
+[INFO] Player took 2 HP damage (98/100)
+[INFO] Player attacks Enemy for 20 damage
+[INFO] Enemy took 20 HP damage (15/50)
+[INFO] Enemy attacks Player for 12 damage
+[INFO] Player took 12 HP damage (86/100)
+[INFO] Enemy attacks Player for 12 damage
+[INFO] Player took 12 HP damage (74/100)
+[INFO] Enemy attacks Player for 12 damage
+[INFO] Player took 12 HP damage (62/100)
+[INFO] Player attacks Enemy for 20 damage
+[INFO] Enemy took 20 HP damage (0/50)
+[WARNING] Enemy has been defeated
+[INFO] Player defeated Enemy
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[WARNING] Player attack failed: no target in range
+[INFO] Main window closed
+[INFO] Engine shutdown

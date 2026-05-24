@@ -1,0 +1,40 @@
+[INFO] Game logger initialized (console and game_log.txt)
+[INFO] XYZRoguelike starting
+[INFO] Loading game resources
+[INFO] Resources loaded successfully
+[INFO] CombatHud initialized
+[INFO] DeveloperLevel: building level
+[INFO] Creating perimeter walls
+[INFO] Placing floor tiles
+[INFO] DeveloperLevel: spawning player with CombatStatsComponent and AttackComponent
+[INFO] Creating player entity
+[INFO] Player ready: HP 100/100, armor 10, attack on Space
+[INFO] DeveloperLevel: spawning enemy with CombatStatsComponent and AttackComponent
+[INFO] Creating enemy entity
+[INFO] Enemy ready: HP 50/50, armor 5, auto-attack when chasing
+[INFO] Starting music: music
+[INFO] Music playback started
+[INFO] DeveloperLevel: level ready
+[ERROR] Handled critical situation: Sound not found: missing_sound_for_test
+[INFO] Combat HUD overlay registered
+[INFO] XYZRoguelike finished
+[INFO] Game logger initialized (console and game_log.txt)
+[INFO] XYZRoguelike starting
+[INFO] Loading game resources
+[INFO] Resources loaded successfully
+[INFO] CombatHud initialized
+[INFO] DeveloperLevel: building level
+[INFO] Creating perimeter walls
+[INFO] Placing floor tiles
+[INFO] DeveloperLevel: spawning player with CombatStatsComponent and AttackComponent
+[INFO] Creating player entity
+[INFO] Player ready: HP 100/100, armor 10, attack on Space
+[INFO] DeveloperLevel: spawning enemy with CombatStatsComponent and AttackComponent
+[INFO] Creating enemy entity
+[INFO] Enemy ready: HP 50/50, armor 5, auto-attack when chasing
+[INFO] Starting music: music
+[INFO] Music playback started
+[INFO] DeveloperLevel: level ready
+[ERROR] Handled critical situation: Sound not found: missing_sound_for_test
+[INFO] Combat HUD overlay registered
+[INFO] XYZRoguelike finished

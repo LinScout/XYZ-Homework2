@@ -173,7 +173,8 @@
     <ClInclude Include="SpriteRendererComponent.h" />
     <ClInclude Include="TargetComponent.h" />
     <ClInclude Include="EnemyMovementComponent.h" />
-    <ClInclude Include="HealthComponent.h" />
+    <ClInclude Include="CombatStatsComponent.h" />
+    <ClInclude Include="CombatStatsDisplayComponent.h" />
     <ClInclude Include="AttackComponent.h" />
     <ClInclude Include="EngineException.h" />
     <ClInclude Include="TransformComponent.h" />
@@ -209,7 +210,8 @@
     <ClCompile Include="SpriteRendererComponent.cpp" />
     <ClCompile Include="TargetComponent.cpp" />
     <ClCompile Include="EnemyMovementComponent.cpp" />
-    <ClCompile Include="HealthComponent.cpp" />
+    <ClCompile Include="CombatStatsComponent.cpp" />
+    <ClCompile Include="CombatStatsDisplayComponent.cpp" />
     <ClCompile Include="AttackComponent.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
     <ClCompile Include="Trigger.cpp" />

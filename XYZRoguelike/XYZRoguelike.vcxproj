@@ -164,6 +164,8 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockFactory.cpp" />
     <ClCompile Include="Bonus.cpp" />
+    <ClCompile Include="CombatHud.cpp" />
+    <ClCompile Include="GameLog.cpp" />
     <ClCompile Include="DeveloperLevel.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Floor.cpp" />
@@ -194,6 +196,8 @@
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockFactory.h" />
     <ClInclude Include="Bonus.h" />
+    <ClInclude Include="CombatHud.h" />
+    <ClInclude Include="GameLog.h" />
     <ClInclude Include="DeveloperLevel.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Floor.h" />

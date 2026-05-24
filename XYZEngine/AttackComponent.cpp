@@ -2,7 +2,7 @@
 #include "AttackComponent.h"
 #include "TransformComponent.h"
 #include "TargetComponent.h"
-#include "HealthComponent.h"
+#include "CombatStatsComponent.h"
 #include "InputComponent.h"
 #include "GameWorld.h"
 #include "EnemyMovementComponent.h"
@@ -54,6 +54,10 @@ namespace XYZEngine
 		GameObject* target = ResolveTarget();
 		if (target == nullptr)
 		{
+			if (!autoAttack && input != nullptr && input->IsAttackPressed())
+			{
+				LOG_WARN(gameObject->GetName() + " attack failed: no target in range");
+			}
 			return;
 		}
 
@@ -141,10 +145,10 @@ namespace XYZEngine
 			return false;
 		}
 
-		auto targetHealth = target->GetComponent<HealthComponent>();
+		auto targetHealth = target->GetComponent<CombatStatsComponent>();
 		if (targetHealth == nullptr)
 		{
-			LOG_WARN("Attack target has no HealthComponent: " + target->GetName());
+			LOG_WARN("Attack target has no CombatStatsComponent: " + target->GetName());
 			return false;
 		}
 
@@ -170,7 +174,7 @@ namespace XYZEngine
 			{
 				LOG_ERROR("Player was killed by " + gameObject->GetName());
 				targetHealth->RestoreToFull();
-				targetHealth->SetArmor(10);
+				targetHealth->SetArmorPoints(10);
 				LOG_WARN("Player health restored to continue the game");
 			}
 			else

@@ -1,16 +1,16 @@
 #include "Wall.h"
 #include <SpriteMovementAnimationComponent.h>
 #include <SpriteColliderComponent.h>
-#include <Logger.h>
+#include "GameLog.h"
 
 XYZRoguelike::Wall::Wall(const XYZEngine::Vector2Df position, int textureMapIndex)
 {
-	static int wallCount = 0;
-	if (wallCount == 0)
+	static bool wallsLogged = false;
+	if (!wallsLogged)
 	{
-		LOG_INFO("Creating walls");
+		GAME_LOG_INFO("Creating perimeter walls");
+		wallsLogged = true;
 	}
-	wallCount++;
 
 	gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Wall");
 	auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
